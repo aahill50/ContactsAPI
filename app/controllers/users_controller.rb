@@ -26,14 +26,23 @@ class UsersController < ApplicationController
     render json: @user
   end
 
+  # def update
+  #   @user = User.find(params[:id])
+  #   @user.update!(user_params) #if want better error copy def create style
+  #   render json: @user
+  # end
+
+  #Good version
   def update
     @user = User.find(params[:id])
-    @user.update!(user_params) #if want better error copy def create style
-    render json: @user
-  end
 
-  def user_params #make private function
-    params[:user].permit(:username)
+    if @user.update(user_params)
+      render json: @user
+    else
+      render(
+        json: @user.errors.full_messages, status: :unprocessable_entity
+      )
+    end
   end
 
   def destroy
@@ -42,6 +51,9 @@ class UsersController < ApplicationController
     render json: @user
   end
 
-
+private
+  def user_params
+    params.require(:user).permit(:username)
+  end
 
 end
