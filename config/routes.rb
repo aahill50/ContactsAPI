@@ -14,6 +14,13 @@ Contacts1::Application.routes.draw do
     :update,
     :destroy
   ]
+
+  resources :contact_share, only: [
+    :create,
+    :destroy
+  ]
+  #rails generate controller ContactShare
+
   # get    'users'          => 'users#index',   :as => 'users'
   # post   'users'          => 'users#create'
   # get    'users/new'      => 'users#new',     :as => 'new_user'
