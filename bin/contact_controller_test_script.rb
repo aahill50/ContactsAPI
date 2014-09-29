@@ -53,6 +53,29 @@ require 'rest_client'
 
 ##### We are testing update of contacts_controller #####
 
+# url = Addressable::URI.new(
+#   scheme: 'http',
+#   host: 'localhost',
+#   port: 3000,
+#   path: '/contacts/3'
+# ).to_s
+#
+# updated_contact_hash = {
+#   contact: {
+#     name: "my new name",
+#     email: "ijustchange@myemail.polka"
+#   }
+# }
+#
+# puts RestClient.patch(url, updated_contact_hash)
+
+
+#rails console
+#Contact.find(3)
+#should be new name instead of tom
+
+##### We are testing delete of contacts_controller #####
+
 url = Addressable::URI.new(
   scheme: 'http',
   host: 'localhost',
@@ -60,16 +83,9 @@ url = Addressable::URI.new(
   path: '/contacts/3'
 ).to_s
 
-updated_contact_hash = {
-  contact: {
-    name: "my new name",
-    email: "ijustchange@myemail.polka"
-  }
-}
 
-puts RestClient.patch(url, updated_contact_hash)
-
+puts RestClient.delete(url)
 
 #rails console
 #Contact.find(3)
-#should be new name instead of tom
+#should not be found
