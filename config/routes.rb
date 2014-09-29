@@ -6,6 +6,14 @@ Contacts1::Application.routes.draw do
     :update,
     :destroy
   ]
+
+  resources :contacts, only: [
+    :index,
+    :create,
+    :show,
+    :update,
+    :destroy
+  ]
   # get    'users'          => 'users#index',   :as => 'users'
   # post   'users'          => 'users#create'
   # get    'users/new'      => 'users#new',     :as => 'new_user'

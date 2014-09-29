@@ -16,5 +16,5 @@ Contact.create!( name: "tom", email: "tom@test.com", user_id: 2)
 Contact.create!( name: "jbill", email: "jbill@test.com", user_id: 2)
 
 ContactShare.create!(contact_id: 1, user_id: 2)
-ContactShare.create!(contact_id: 1, user_id: 2)
-ContactShare.create!(contact_id: 1, user_id: 2)
+ContactShare.create!(contact_id: 1, user_id: 3)
+ContactShare.create!(contact_id: 1, user_id: 4)
