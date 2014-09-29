@@ -10,6 +10,11 @@ User.create!(username: "John")
 User.create!(username: "Dave C ")
 User.create!(username: "Matt N")
 
-Contact.create!( name: "", email: "")
+Contact.create!( name: "jack", email: "jack@test.com", user_id: 2)
+Contact.create!( name: "john", email: "john@test.com", user_id: 2)
+Contact.create!( name: "tom", email: "tom@test.com", user_id: 2)
+Contact.create!( name: "jbill", email: "jbill@test.com", user_id: 2)
 
-ContactShare(contact_id: 1, user_id: 2)
+ContactShare.create!(contact_id: 1, user_id: 2)
+ContactShare.create!(contact_id: 1, user_id: 2)
+ContactShare.create!(contact_id: 1, user_id: 2)
