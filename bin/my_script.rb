@@ -81,7 +81,45 @@ require 'rest_client'
 
 ############# END - WORK FOR Nesting Parameters #############
 
-RestClient.get('http://localhost:3000/users')
+#
+# RestClient.get('http://localhost:3000/users')
+#
+# RestClient.post('http://localhost:3000/users', {'cat' => {'big' => 'tom', small: 'bob'}})
+#
+# puts RestClient.get('http://localhost:3000/users')
 
-RestClient.post('http://localhost:3000/users', {'cat' => {'big' => 'tom', small: 'bob'}})
 
+############# Creating a User through the API #############
+# def create_user
+#   url = Addressable::URI.new(
+#     scheme: 'http',
+#     host: 'localhost',
+#     port: 3000,
+#     path: '/users.json'
+#   ).to_s
+#
+#   puts RestClient.post(
+#     url,
+#     # { user: { name: "Gizmo", email: "gizmo@giz.mo" } }
+#     { user: { name: "Gizmo" } }
+#   )
+# end
+#
+# create_user
+
+
+############# TESTING show update destroy user ###########
+
+  url = Addressable::URI.new(
+    scheme: 'http',
+    host: 'localhost',
+    port: 3000,
+    path: '/users/2'
+  ).to_s
+
+  # puts RestClient.get(url)
+
+
+   puts RestClient.patch(url, { user: { name: "Gizmo" }})
+
+  #puts RestClient.delete(url)

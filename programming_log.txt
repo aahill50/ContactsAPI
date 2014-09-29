@@ -9,3 +9,6 @@ rails generate migration CreateUser
 be rake db:migrate
   #be aliased to 'bundle exec'
 User.create!(name: "Barack", email: "white@house.com")
+
+
+http://guides.rubyonrails.org/action_controller_overview.html
