@@ -1,0 +1,7 @@
+rails _4.0.2_ new MyProjectName --database postgresql
+Update the database.yml file
+  username: appacademy
+  host: localhost
+rake db:create:all
+Follow this:
+  https://github.com/appacademy/rails-curriculum/blob/master/rails-setup.md
