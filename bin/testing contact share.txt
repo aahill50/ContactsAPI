@@ -1,0 +1,15 @@
+User.create!(username: "Matt K")
+User.create!(username: "Dennis")
+User.create!(username: "Chris")
+User.create!(username: "Dave R")
+User.create!(username: "Colin J")
+User.create!(username: "Zak")
+User.create!(username: "Mike")
+User.create!(username: "Jessie")
+User.create!(username: "John")
+User.create!(username: "Dave C ")
+User.create!(username: "Matt N")
+
+Contact.create!( name: "", email: "")
+
+ContactShare(contact_id: 1, user_id: 2)

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     # render text: "I'm in the create action!"
     # render json: {'a_key' => 'a value'}
-    user = User.new( params[:user].permit(:name, :email) )
+    user = User.new( params[:user].permit(user_params) )
 
     # save! will throw an error if it can't save
     # save  will return false if it can't save
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def user_params #make private function
-    params[:user].permit(:name, :email)
+    params[:user].permit(:username)
   end
 
   def destroy
