@@ -1,6 +1,8 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    # validated through http://localhost:3000/users/4/contacts
+    @contacts = User.find(params[:user_id]).contacts
+    @contacts += User.find(params[:user_id]).shared_contacts
     render json: @contacts
   end
 

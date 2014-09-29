@@ -5,10 +5,11 @@ Contacts1::Application.routes.draw do
     :show,
     :update,
     :destroy
-  ]
+    ] do
+        resources :contacts, only: :index
+    end
 
   resources :contacts, only: [
-    :index,
     :create,
     :show,
     :update,
