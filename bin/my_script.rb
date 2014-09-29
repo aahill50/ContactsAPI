@@ -1,5 +1,5 @@
 require 'addressable/uri'
-require 'rest-client'
+require 'rest_client'
 
 # url = Addressable::URI.new(
 #   scheme: 'http',
@@ -9,6 +9,9 @@ require 'rest-client'
 # ).to_s
 #
 # puts RestClient.get(url)
+
+
+############# START - WORK FOR Nesting Parameters #############
 
 ###brain storming Now make some POST requests to /users playing around with POST data
 
@@ -25,19 +28,60 @@ require 'rest-client'
 # #https://github.com/rest-client/rest-client
 
 
-#######
-url = Addressable::URI.new(
-  scheme: 'http',
-  host: 'localhost',
-  port: 3000,
-  path: '/users/5.json',
-  query_values: {
-    'some_category[a_key]' => 'another value',
-    'some_category[a_second_key]' => 'yet another value',
-    'some_category[inner_inner_hash][key]' => 'value',
-    'something_else' => 'aaahhhhh'
-  }
-)
+#######brain storming 2
+# url = Addressable::URI.new(
+#   scheme: 'http',
+#   host: 'localhost',
+#   port: 3000,
+#   path: '/users/5.json',
+#   query_values: {
+#     'some_category[a_key]' => 'another value',
+#     'some_category[a_second_key]' => 'yet another value',
+#     'some_category[inner_inner_hash][key]' => 'value',
+#     'something_else' => 'aaahhhhh'
+#   }
+# )
+#
+#
+# putsRestClient.post(url, url.query_values)
 
 
-puts RestClient.post(url, url.query_values)
+# url = Addressable::URI.new(
+#   scheme: 'http',
+#   host: 'localhost',
+#   port: 3000,
+#   path: '/users.html'
+# ).to_s
+#
+# p url
+#
+# RestClient.get(url)
+
+# RestClient.post(url, {
+#     'some_category[a_key]' => 'another value',
+#     'some_category[a_second_key]' => 'yet another value',
+#     'some_category[inner_inner_hash][key]' => 'value',
+#     'something_else' => 'aaahhhhh'
+#   })
+
+# RestClient.post( url,
+#  {
+#   'id' => 5,
+#   'some_category' => {
+#     'a_key' => 'another value',
+#     'a_second_key' => 'yet another value',
+#     'inner_inner_hash' => {
+#       'key' => 'value'
+#     }
+#   },
+#   'something_else' => 'aaahhhhh'
+#  })
+
+
+
+############# END - WORK FOR Nesting Parameters #############
+
+RestClient.get('http://localhost:3000/users')
+
+RestClient.post('http://localhost:3000/users', {'cat' => {'big' => 'tom', small: 'bob'}})
+

@@ -5,3 +5,7 @@ Update the database.yml file
 rake db:create:all
 Follow this:
   https://github.com/appacademy/rails-curriculum/blob/master/rails-setup.md
+rails generate migration CreateUser
+be rake db:migrate
+  #be aliased to 'bundle exec'
+User.create!(name: "Barack", email: "white@house.com")
